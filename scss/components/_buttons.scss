@@ -13,22 +13,22 @@
   }
   
   .default {
-    background-color: #51ddfc;
+    background-color: map-get($map: $column-colors, $key: "col-11");
   }
   
   .error {
-    background-color: #e4757a;
+    background-color: map-get($map: $column-colors, $key: "col-9");
   }
   
   .info {
-    background-color: #927bc1;
+    background-color: map-get($map: $column-colors, $key: "col-1");
   }
   
   .success {
-    background-color: #63cc82;
+    background-color: map-get($map: $column-colors, $key: "col-10");
   }
   
   .warning {
-    background-color: #fd7856;
+    background-color: map-get($map: $column-colors, $key: "col-2");
   }
   
