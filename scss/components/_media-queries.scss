@@ -1,7 +1,7 @@
 /* ============================================= */
 /*              Media Queries                    */
 /* ============================================= */
-@media (min-width: 768px) {
+@media #{$narrow-viewport} {
 
     .container {
       max-width: 1400px;
@@ -102,4 +102,8 @@
       margin-right: initial;
     }
     
+    }
+
+    @media #{$wide-viewport} {
+
     }
