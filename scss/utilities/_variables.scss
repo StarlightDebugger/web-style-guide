@@ -1,5 +1,6 @@
 $main-font-color: #777;
 $headline-primary: #58e1c1;
+$white: #fff;
 
 // column colors
 $column-colors: (
@@ -15,6 +16,14 @@ $column-colors: (
     "col-10": "#63cc82",
     "col-11": "#51ddfc",
     "col-12": "#80e8d1"
+);
+
+$button-types: (
+    "default": map-get($map: $column-colors, $key: "col-11"),
+    "error": map-get($map: $column-colors, $key: "col-9"),
+    "info": map-get($map: $column-colors, $key: "col-1"),
+    "success": map-get($map: $column-colors, $key: "col-10"),
+    "warning":map-get($map: $column-colors, $key: "col-2"),
 );
 
 // Media query breakpoints
