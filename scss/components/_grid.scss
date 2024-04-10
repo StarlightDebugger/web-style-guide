@@ -1,32 +1,65 @@
 /* ============================================= */
 /*              Grid System                      */
 /* ============================================= */
+@use 'sass:math';
 
 .container {
-    padding: 0 10px;
+  padding: 0 10px;
+  @include query($narrow-viewport) {
+    @include center-block();
+    max-width: 1400px;
   }
+}
+
+.centered {
+  @include query($narrow-viewport) {
+    @include center-block();
+  }
+}
   
-  .row {
+.row {
+  display: flex;
+  flex-direction: column;
+  padding: 1em 10px;
+  @include query($narrow-viewport) {
+    flex-direction: row;
+  }
+}
+
+[class^=col] {
+  margin-top: 10px;
+  flex-basis: 100%;
+  min-height: 25px;
+  padding: 10px;
+  border-radius: 5px;
+  @include query($narrow-viewport) {
     display: flex;
-    flex-direction: column;
-    padding: 1em 10px;
+    justify-content: center;
+    margin-top: 0;
+    align-items: center;
   }
-  
-  [class^=col] {
-    margin-top: 10px;
-    flex-basis: 100%;
-    min-height: 25px;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  @each $col, $color in $column-colors {
-    .theme.#{$col} {
-      background-color: $color;
+  & + & {
+    @include query($narrow-viewport) {
+      margin-left: 10px;
     }
   }
+}
 
-  .card {
-    flex-basis: 100%;
+
+@each $col, $color in $column-colors {
+  .theme.#{$col} {
+    background-color: $color;
   }
-  
+}
+
+@include query($narrow-viewport) {
+  @for $i from 1 through 12 {
+    .col-#{$i} {
+      flex-basis: math.div($i, 12) * 100%;
+    }
+  }
+}
+
+.card {
+  flex-basis: 100%;
+}

@@ -28,5 +28,4 @@ $button-types: (
 );
 
 // Media query breakpoints
-$narrow-viewport: '(max-width: 768px)';
-$wide-viewport: '(max-width: 1024px)';
+$narrow-viewport: '(min-width: 768px)';

@@ -3,18 +3,29 @@
 /* ============================================= */
 
 .btn {
-    margin-top: 15px;
-    width: 100%;
-    color: $white;
-    border: none;
-    padding: 10px 0;
-    text-transform: uppercase;
-    border-radius: 5px;
+  margin-top: 15px;
+  width: 100%;
+  color: $white;
+  border: none;
+  padding: 10px 0;
+  text-transform: uppercase;
+  border-radius: 5px;
+    
+  @include query($narrow-viewport) {
+    padding: 10px 30px;
   }
-  
-  @each $button-type, $color in $button-types {
-    .#{$button-type} {
-      background-color: $color;
+  & + & {
+    @include query($narrow-viewport) {
+      margin-left: 10px;
     }
   }
+}
   
+@each $button-type, $color in $button-types {
+  .#{$button-type} {
+    background-color: $color;
+    &:hover {
+      @include add-hover-transition($color);
+    }
+  }
+}
