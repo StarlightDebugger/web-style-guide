@@ -18,6 +18,7 @@ $column-colors: (
     "col-12": "#80e8d1"
 );
 
+// button type colors
 $button-types: (
     "default": map-get($map: $column-colors, $key: "col-11"),
     "error": map-get($map: $column-colors, $key: "col-9"),
