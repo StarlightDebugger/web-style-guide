@@ -20,54 +20,12 @@
     border-radius: 5px;
   }
   
-  .theme.col-1 {
-    background-color: map-get($map: $column-colors, $key: "col-1");
+  @each $col, $color in $column-colors {
+    .theme.#{$col} {
+      background-color: $color;
+    }
   }
-  
-  .theme.col-2 {
-    background-color: map-get($map: $column-colors, $key: "col-2");
-  }
-  
-  .theme.col-3 {
-    background-color: map-get($map: $column-colors, $key: "col-3");
-  }
-  
-  .theme.col-4 {
-    background-color: map-get($map: $column-colors, $key: "col-4");
-  }
-  
-  .theme.col-5 {
-    background-color: map-get($map: $column-colors, $key: "col-5");
-  }
-  
-  .theme.col-6 {
-    background-color: map-get($map: $column-colors, $key: "col-6");
-  }
-  
-  .theme.col-7 {
-    background-color: map-get($map: $column-colors, $key: "col-7");
-  }
-  
-  .theme.col-8 {
-    background-color: map-get($map: $column-colors, $key: "col-8");
-  }
-  
-  .theme.col-9 {
-    background-color: map-get($map: $column-colors, $key: "col-9");
-  }
-  
-  .theme.col-10 {
-    background-color: map-get($map: $column-colors, $key: "col-10");
-  }
-  
-  .theme.col-11 {
-    background-color: map-get($map: $column-colors, $key: "col-11");
-  }
-  
-  .theme.col-12 {
-    background-color: map-get($map: $column-colors, $key: "col-12");
-  }
-  
+
   .card {
     flex-basis: 100%;
   }
