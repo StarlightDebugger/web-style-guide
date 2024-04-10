@@ -3,32 +3,29 @@
 /* ============================================= */
 
 .btn {
-    margin-top: 15px;
-    width: 100%;
-    color: #fff;
-    border: none;
-    padding: 10px 0;
-    text-transform: uppercase;
-    border-radius: 5px;
+  margin-top: 15px;
+  width: 100%;
+  color: $white;
+  border: none;
+  padding: 10px 0;
+  text-transform: uppercase;
+  border-radius: 5px;
+    
+  @include query($narrow-viewport) {
+    padding: 10px 30px;
   }
-  
-  .default {
-    background-color: map-get($map: $column-colors, $key: "col-11");
+  & + & {
+    @include query($narrow-viewport) {
+      margin-left: 10px;
+    }
   }
+}
   
-  .error {
-    background-color: map-get($map: $column-colors, $key: "col-9");
+@each $button-type, $color in $button-types {
+  .#{$button-type} {
+    background-color: $color;
+    &:hover {
+      @include add-hover-transition($color);
+    }
   }
-  
-  .info {
-    background-color: map-get($map: $column-colors, $key: "col-1");
-  }
-  
-  .success {
-    background-color: map-get($map: $column-colors, $key: "col-10");
-  }
-  
-  .warning {
-    background-color: map-get($map: $column-colors, $key: "col-2");
-  }
-  
+}
