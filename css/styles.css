@@ -491,6 +491,21 @@ a {
 /* ============================================= */
 /*              Images                           */
 /* ============================================= */
+/* .img-avatar {
+    @include center-block();
+    margin-top: 10px;
+    max-width: 100%; 
+    max-height: 100%;
+    &-frame {
+      max-height: 100%;
+      padding: 13px;
+      border: 1px solid #ccc;
+    }
+  }
+
+  .img-logo {
+    @include center-block();
+  } */
 .img-avatar {
   display: block;
   margin-left: auto;
@@ -499,12 +514,11 @@ a {
   max-width: 100%;
   max-height: 100%;
 }
-.img-avatar-frame {
+.img-frame {
   max-height: 100%;
   padding: 13px;
   border: 1px solid #ccc;
 }
-
 .img-logo {
   display: block;
   margin-left: auto;
